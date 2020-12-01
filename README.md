@@ -47,3 +47,10 @@ column: user, timestamp, evtname
 table revenue
 column: user, total_spend
 ```
+
+## Solution
+
+Provided solution is based on Apache Airflow and built on Composer GCP, as I have an opportunity 
+to run and test it on existing environment. Current approach has a drawback is that if we have large 
+amount of files in a bucket to handle it may be too slow to real-time. Files handling should be time 
+and size partitioned to get good enough performance of ETL. 

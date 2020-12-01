@@ -2,9 +2,9 @@ import logging
 import datetime
 
 from airflow import models
-from airflow.utils.dates import days_ago
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.contrib.operators.gcs_to_bq import GoogleCloudStorageToBigQueryOperator
+from airflow.contrib.operators.bigquery_operator import BigQueryOperator
 
 
 gcs_bucket = models.Variable.get('gcs_bucket')
@@ -60,6 +60,19 @@ with models.DAG(
         write_disposition='WRITE_TRUNCATE'
     )
 
+    revenue_total_etl = BigQueryOperator(
+        task_id='revenue_total_etl',
+        destination_dataset_table='airflow.revenue_total',
+        sql="""
+        SELECT user, SUM(spend) AS revenue_total
+        FROM airflow.revenue
+        GROUP BY user
+        ORDER BY revenue_total DESC
+        """,
+        use_legacy_sql=False,
+        write_disposition='WRITE_TRUNCATE'
+    )
+
     end = DummyOperator(task_id='end')
 
-begin >> [user_etl, revenue_etl] >> end
+begin >> [user_etl, revenue_etl] >> revenue_total_etl >> end

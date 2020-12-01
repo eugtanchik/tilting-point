@@ -1,0 +1,10 @@
+{"user": "H", "timestamp": "2020-02-22 00:06:02", "evtname": "tutorial", "spend": 0.02}
+{"user": "B", "timestamp": "2020-11-23 15:22:38", "evtname": "iap", "spend": 0.94}
+{"user": "E", "timestamp": "2020-08-03 22:43:18", "evtname": "tutorial", "spend": 0.94}
+{"user": "D", "timestamp": "2020-07-10 01:56:26", "evtname": "tutorial", "spend": 0.39}
+{"user": "C", "timestamp": "2020-09-25 01:36:02", "evtname": "iap", "spend": 0.48}
+{"user": "H", "timestamp": "2020-04-20 16:08:58", "evtname": "tutorial", "spend": 0.17}
+{"user": "B", "timestamp": "2020-06-10 05:45:33", "evtname": "tutorial", "spend": 0.46}
+{"user": "C", "timestamp": "2020-09-01 21:23:48", "evtname": "iap", "spend": 0.29}
+{"user": "A", "timestamp": "2020-02-11 01:08:07", "evtname": "tutorial", "spend": 0.32}
+{"user": "A", "timestamp": "2020-08-15 15:45:56", "evtname": "iap", "spend": 0.25}

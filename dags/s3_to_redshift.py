@@ -18,8 +18,9 @@ def load_data_to_redshift(*args, **kwargs):
 
 
 dag = DAG(
-    'lesson1.exercise6',
-    start_date=datetime.datetime.now()
+    'demo_etl',
+    start_date=datetime.datetime.now(),
+    schedule_interval='@daily'
 )
 
 create_table = PostgresOperator(
